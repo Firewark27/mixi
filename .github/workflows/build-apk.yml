@@ -14,6 +14,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   compilar:
@@ -91,4 +93,30 @@ jobs:
           git config user.email "mixi-bot@users.noreply.github.com"
           git add web/version.json
           git commit -m "chore: version.json -> 1.0.$NUM" || echo "sin cambios que subir"
+          git pull --rebase --autostash origin main || true
           git push || echo "nada que subir"
+
+  # Los pushes hechos con el token automático NO disparan otros workflows.
+  # Por eso la publicación de la interfaz se hace aquí mismo, después de compilar.
+  publicar-web:
+    needs: compilar
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
