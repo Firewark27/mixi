@@ -164,11 +164,11 @@
     limpiarMensaje();
 
     if (!url) {
-      return mostrarMensaje('Primero pega el link del video 😊');
+      return mostrarMensaje('Primero pega el enlace del video 😊');
     }
 
     if (!esLinkValido(url)) {
-      return mostrarMensaje('Ese link no sirve. Copia otro 😕');
+      return mostrarMensaje('Ese enlace no sirve. Copia otro 😕');
     }
 
     estadoUltimoTipo = tipo;
@@ -196,7 +196,7 @@
         clearInterval(reloj);
         window.MixiUI.done(nombre);
       } else {
-        pintarProgreso(pct, tipo === 'audio' ? 'Bajando la música…' : 'Bajando el video…');
+        pintarProgreso(pct, tipo === 'audio' ? 'Descargando el audio…' : 'Descargando el video…');
       }
     }, 320);
   }
