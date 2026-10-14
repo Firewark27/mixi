@@ -57,3 +57,5 @@ docs/      → design spec and implementation plan
 
 The APK is built in the cloud by GitHub Actions — no local Android SDK required.
 Trigger it by pushing to `main`, or run the workflow manually.
+
+<!-- Mixi: app Android de descarga de video y audio, para uso personal. -->
