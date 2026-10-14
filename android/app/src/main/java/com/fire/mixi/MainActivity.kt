@@ -138,7 +138,7 @@ class MainActivity : Activity() {
                     EngineManager.peticionDeAudio(limpia, carpeta)
                 }
 
-                YoutubeDL.getInstance().execute(peticion, "mixi") { progreso, _ ->
+                YoutubeDL.getInstance().execute(peticion, "mixi") { progreso, _, _ ->
                     avisarProgreso((progreso * 100).toInt().coerceIn(0, 100))
                 }
 
