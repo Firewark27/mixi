@@ -105,7 +105,7 @@ Investigación verificada (octubre 2026):
 **Permisos:** `INTERNET`, `POST_NOTIFICATIONS`, `REQUEST_INSTALL_PACKAGES`,
 `WRITE_EXTERNAL_STORAGE` (solo API ≤ 28).
 
-### 3.2 UI — Web (Vercel)
+### 3.2 UI — Web (GitHub Pages)
 
 - `index.html` + `app.js` + `style.css` (JavaScript puro, sin frameworks)
 - **Pantalla única:** campo de link, botón VIDEO, botón SOLO MÚSICA, barra de progreso, historial
@@ -137,7 +137,7 @@ Investigación verificada (octubre 2026):
 | Nivel | Mecanismo | Disparador | Toques de la usuaria | Peso |
 |---|---|---|---|---|
 | **1. Motor yt-dlp** | `updateYoutubeDL(context, NIGHTLY)` | Automático al abrir (máx. 1 vez/día) | **0** | ~3 MB |
-| **2. Interfaz** | Deploy automático de Vercel al hacer push | Al abrir la app | **0** | ~0 |
+| **2. Interfaz** | Deploy automático de GitHub Pages al hacer push | Al abrir la app | **0** | ~0 |
 | **3. APK** | `version.json` + descarga + Intent de instalación | Botón ACTUALIZAR / banner | **3** (guiados por Fire) | ~100 MB |
 
 **Flujo del botón ACTUALIZAR:**
@@ -210,7 +210,7 @@ C:\Users\Fire\mixi\
 ├─ docs\
 │  └─ specs\
 │     └─ 2026-10-14-mixi-design.md      ← este documento
-├─ web\                                 ← se publica en Vercel
+├─ web\                                 ← se publica en GitHub Pages
 │  ├─ index.html
 │  ├─ app.js
 │  ├─ style.css
