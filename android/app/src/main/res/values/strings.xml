@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mixi</string>
+    <string name="btn_actualizar">🔄 Actualizar</string>
+    <string name="btn_actualizar_hay">⬆️ Actualizar</string>
+    <string name="sin_internet">Revisa tu internet 📶</string>
+    <string name="btn_reintentar">Reintentar</string>
+    <string name="al_dia">✓ Tu app está al día</string>
+    <string name="actualizacion_lista">Versión nueva lista</string>
+    <string name="actualizando">Descargando la actualización…</string>
+    <string name="notif_canal">Descargas de Mixi</string>
+    <string name="notif_descarga">Descargando…</string>
+    <string name="notif_listo">¡Listo! Ya está guardado</string>
+</resources>

@@ -11,8 +11,9 @@ android {
         applicationId = "com.fire.mixi"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.0"
+        // Se puede sobreescribir desde la compilación: -PversionCode=2 -PversionName=1.0.2
+        versionCode = (project.findProperty("versionCode") as String?)?.toIntOrNull() ?: 1
+        versionName = (project.findProperty("versionName") as String?) ?: "1.0.0"
 
         // Solo los procesadores que usan los celulares modernos: baja el peso del APK
         ndk {

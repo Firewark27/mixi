@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Carpeta de caché de la app: aquí cae el APK descargado antes de instalarse -->
+    <cache-path
+        name="actualizaciones"
+        path="." />
+
+    <files-path
+        name="temporales"
+        path="descargas/" />
+</paths>
