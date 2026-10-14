@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="marca">#4F46E5</color>
-    <color name="ic_launcher_background">#4F46E5</color>
+    <!-- Fondo del icono: blanco, igual que el fondo de la imagen del gatito -->
+    <color name="ic_launcher_background">#FFFFFF</color>
 </resources>
