@@ -1,0 +1,306 @@
+/* ============================================================
+   Mixi — hoja de estilo
+   Reglas: nada menor a 16px, contraste alto, botones grandes.
+   ============================================================ */
+
+:root {
+  --accent:        #4f46e5;
+  --accent-dark:   #4338ca;
+  --accent-soft:   #eef2ff;
+
+  /* Botones principales: contraste alto garantizado en ambos temas */
+  --btn-bg:        #4f46e5;
+  --btn-fg:        #ffffff;
+  --warm:          #92400e;
+  --warm-soft:     #fff7ed;
+
+  --bg:            #f4f5fa;
+  --card:          #ffffff;
+  --text:          #16181d;
+  --muted:         #565c68;
+  --border:        #e3e5ec;
+  --shadow:        0 2px 4px rgba(16, 18, 40, .04),
+                   0 12px 32px rgba(16, 18, 40, .08);
+  --ok:            #059669;
+  --danger:        #b91c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent:      #a5b4fc;
+    --accent-dark: #6366f1;
+    --accent-soft: #1e1b4b;
+
+    --btn-bg:      #4f46e5;
+    --btn-fg:      #ffffff;
+    --warm:        #fbbf24;
+    --warm-soft:   #2a1e08;
+
+    --bg:          #101218;
+    --card:        #191c24;
+    --text:        #f2f3f7;
+    --muted:       #b6bccb;
+    --border:      #343b49;
+    --shadow:      0 2px 4px rgba(0, 0, 0, .3),
+                   0 12px 32px rgba(0, 0, 0, .35);
+    --ok:          #34d399;
+    --danger:      #f87171;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Campo de link ---------- */
+
+.field-wrap {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+#link {
+  flex: 1;
+  min-width: 0;
+  height: 64px;
+  padding: 0 18px;
+  font-size: 18px;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  outline: none;
+  transition: border-color .15s ease;
+}
+
+#link::placeholder { color: var(--muted); }
+
+#link:focus {
+  border-color: var(--accent);
+  background: var(--card);
+}
+
+.paste {
+  flex: 0 0 auto;
+  height: 64px;
+  padding: 0 18px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.paste:active { transform: scale(.97); }
+
+/* ---------- Botones grandes ---------- */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 72px;
+  margin-bottom: 12px;
+  font-size: 21px;
+  font-weight: 800;
+  font-family: inherit;
+  letter-spacing: .01em;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform .12s ease, filter .15s ease;
+}
+
+.btn:active { transform: scale(.985); filter: brightness(.95); }
+
+.btn .ico { font-size: 24px; }
+
+.btn-video {
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, .32);
+}
+
+.btn-audio {
+  color: var(--warm);
+  background: var(--warm-soft);
+  border: 2px solid var(--warm);
+}
+
+.btn-small {
+  width: auto;
+  height: 52px;
+  padding: 0 22px;
+  margin: 0;
+  font-size: 17px;
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  box-shadow: none;
+}
+
+.btn[disabled] { opacity: .45; pointer-events: none; }
+
+/* ---------- Barra de progreso ---------- */
+
+.progress {
+  margin: 6px 0 14px;
+  padding: 14px 16px;
+  background: var(--accent-soft);
+  border-radius: 14px;
+}
+
+.progress-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+#progress-pct { font-variant-numeric: tabular-nums; }
+
+.bar {
+  height: 14px;
+  background: rgba(120, 120, 150, .22);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar > i {
+  display: block;
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: width .25s ease;
+}
+
+/* ---------- Mensajes ---------- */
+
+.message {
+  margin: 6px 0 14px;
+  padding: 16px;
+  text-align: center;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+}
+
+.message p {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.message:last-child p { margin-bottom: 0; }
+
+.message.ok    { border-color: var(--ok);     background: rgba(5, 150, 105, .08); }
+.message.error { border-color: var(--danger);  background: rgba(185, 28, 28, .07); }
+
+.message .btn { margin: 0 auto; }
+
+/* ---------- Historial ---------- */
+
+.history { margin-top: 18px; }
+
+.history h2 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.history ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 2px;
+  font-size: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.history li .tipo { flex: 0 0 auto; font-size: 20px; }
+
+.history li .nombre {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history li .fecha {
+  flex: 0 0 auto;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.empty {
+  margin: 0;
+  padding: 14px 2px;
+  font-size: 16px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Ayuda paso a paso ---------- */
+
+.ayuda {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+  background: var(--bg);
+  border-radius: 12px;
+}
+
+.ayuda b { color: var(--text); font-weight: 700; }

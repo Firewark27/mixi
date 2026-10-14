@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4f46e5">
+<title>Mixi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+
+  <div class="card">
+
+    <p class="ayuda">
+      <b>1.</b> Copia el link del video en YouTube<br>
+      <b>2.</b> Pégalo aquí y toca un botón<br>
+      <b>3.</b> Espera y listo ✅
+    </p>
+
+    <label class="sr-only" for="link">Link del video</label>
+    <div class="field-wrap">
+      <input id="link" type="url" inputmode="url" autocomplete="off"
+             spellcheck="false" placeholder="Pega el link del video">
+      <button id="paste" class="paste" type="button">Pegar</button>
+    </div>
+
+    <button id="btn-video" class="btn btn-video" type="button">
+      <span class="ico">🎬</span> BAJAR VIDEO
+    </button>
+
+    <button id="btn-audio" class="btn btn-audio" type="button">
+      <span class="ico">🎵</span> SOLO MÚSICA
+    </button>
+
+    <section id="progress" class="progress" hidden>
+      <div class="progress-head">
+        <span id="progress-label">Descargando…</span>
+        <span id="progress-pct">0%</span>
+      </div>
+      <div class="bar"><i id="progress-bar"></i></div>
+    </section>
+
+    <section id="message" class="message" hidden>
+      <p id="message-text"></p>
+      <button id="message-action" class="btn btn-small" type="button" hidden></button>
+    </section>
+
+    <section class="history">
+      <h2>Lo que ya bajé</h2>
+      <ul id="history-list"></ul>
+      <p id="history-empty" class="empty">Todavía no has bajado nada</p>
+    </section>
+
+  </div>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>

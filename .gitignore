@@ -1,0 +1,16 @@
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+*.iml
+.idea/
+
+# Keystore — NUNCA al repositorio
+*.jks
+*.keystore
+
+# Sistema
+.DS_Store
+Thumbs.db
